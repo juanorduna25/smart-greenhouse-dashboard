@@ -216,6 +216,102 @@
     padding: 10px 18px; border-radius: 12px; font-size: 14px; opacity: 0; transition: opacity .3s, transform .3s; pointer-events: none; z-index: 10; max-width: 90vw; }
   #toast.show { opacity: .96; transform: translate(-50%, 0); }
 
+  /* ---------- Bloque académico (estilo SmartGreenZone) ---------- */
+  .acad {
+    --navy: #062331; --lime: #8BEA00; --green: #68B900; --cyan: #00C8F5; --deep: #416F00;
+    position: relative; padding: 0; overflow: hidden; color: var(--navy);
+    background: #fff; border: 1px solid #e5edf1; box-shadow: 0 12px 34px rgba(6, 35, 49, .10);
+  }
+  .acad h2, .acad h3, .acad h4, .acad b, .acad strong { color: var(--navy); }
+  .acad-top {
+    position: relative; padding: 26px 28px 22px;
+    background: linear-gradient(120deg, #ffffff 0%, #f4fbf3 58%, #eef9fd 100%);
+    border-bottom: 1px solid #e5edf1;
+  }
+  .acad-top::after { content: ""; position: absolute; right: -60px; top: -80px; width: 230px; height: 230px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,234,0,.26), rgba(0,200,245,.10) 58%, transparent 72%); pointer-events: none; }
+  .acad-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 7px 13px; border-radius: 999px;
+    font-size: 11.5px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase;
+    background: rgba(139,234,0,.16); color: var(--deep) !important; border: 1px solid rgba(104,185,0,.35); }
+  .acad-kicker .dot2 { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  .acad h2 { font-size: clamp(24px, 3.2vw, 36px); line-height: 1.15; margin: 16px 0 10px; letter-spacing: -.02em; font-weight: 800; }
+  .acad h2 .g { color: var(--green) !important; }
+  .acad-lead { font-size: 15px; line-height: 1.65; margin: 0; max-width: 82ch; color: #475569 !important; }
+  .acad-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .acad-meta span { font-size: 12px; font-weight: 700; padding: 6px 11px; border-radius: 8px; background: #f1f5f9; border: 1px solid #e2e8ee; }
+  .acad-meta span.cy { background: rgba(0,200,245,.10); border-color: rgba(0,200,245,.28); color: #036b85 !important; }
+  .acad-meta span.gr { background: rgba(104,185,0,.10); border-color: rgba(104,185,0,.30); color: var(--deep) !important; }
+  .acad-body { padding: 24px 28px 28px; }
+  .sg-eyebrow { display: block; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan) !important; margin-bottom: 6px; }
+  .sg-sec { margin-bottom: 26px; }
+  .sg-sec:last-child { margin-bottom: 0; }
+  .sg-sec > h3 { font-size: 19px; margin: 0 0 10px; font-weight: 800; border-left: 4px solid var(--cyan); padding-left: 12px; }
+  .sg-p { font-size: 14px; line-height: 1.65; color: #475569 !important; margin: 0 0 10px; }
+  .sg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 12px; }
+  .sg-box { padding: 15px 16px; border-radius: 12px; border: 1px solid #e6edf1; background: #fbfdfd; }
+  .sg-box.g { border-top: 3px solid var(--green); }
+  .sg-box.c { border-top: 3px solid var(--cyan); }
+  .sg-box.n { border-top: 3px solid var(--navy); }
+  .sg-box h4 { font-size: 13px; margin: 0 0 7px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+  .sg-box p, .sg-box li { font-size: 13px; line-height: 1.55; color: #475569 !important; }
+  .sg-box ul { margin: 0; padding-left: 18px; }
+  .sg-box li { margin-bottom: 4px; }
+  .sg-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 4px; }
+  .sg-flow span { font-size: 12.5px; font-weight: 700; padding: 8px 12px; border-radius: 9px; background: #eef6f7; border: 1px solid #d8e8ec; }
+  .sg-flow b { color: var(--cyan) !important; font-size: 15px; }
+  .sg-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .sg-table th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #64748b !important;
+    padding: 9px 10px; border-bottom: 2px solid var(--green); background: #f8fafc; }
+  .sg-table td { padding: 8px 10px; border-bottom: 1px solid #edf2f5; color: #334155 !important; }
+  .sg-table tr:last-child td { border-bottom: none; }
+  .sg-table td b { color: var(--deep) !important; }
+  .sg-src { display: block; margin-top: 8px; font-size: 11px; font-style: italic; color: #94a3b8 !important; }
+  .sg-authors { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .sg-author { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px;
+    background: linear-gradient(120deg, #f8fbf4, #eef9fd); border: 1px solid #e2ebd6; }
+  .sg-author i { width: 30px; height: 30px; border-radius: 50%; background: var(--green); color: #fff !important;
+    display: grid; place-items: center; font-style: normal; font-size: 12px; font-weight: 800; }
+  .sg-author span { font-size: 13px; font-weight: 700; }
+  .sg-refs { font-size: 12px; line-height: 1.7; color: #64748b !important; margin: 0; padding-left: 18px; }
+
+  /* Transición suave al cambiar de tema */
+  .acad, .acad-top, .acad-meta span, .sg-box, .sg-flow span, .sg-table th, .sg-table td, .sg-author {
+    transition: background .4s, color .4s, border-color .4s;
+  }
+
+  /* Modo oscuro: el bloque académico sigue el mismo interruptor que el resto */
+  [data-theme="dark"] .acad {
+    --navy: #e7f5ee; --green: #8BEA00; --cyan: #38d6ff; --deep: #b9f26a;
+    color: #e7f5ee; background: #0d1c22; border-color: #1e3a3f;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .42);
+  }
+  [data-theme="dark"] .acad h2,
+  [data-theme="dark"] .acad h3,
+  [data-theme="dark"] .acad h4,
+  [data-theme="dark"] .acad b,
+  [data-theme="dark"] .acad strong { color: #f1fbf5; }
+  [data-theme="dark"] .acad-top {
+    background: linear-gradient(120deg, #0d1c22 0%, #11282b 58%, #0d2733 100%);
+    border-bottom-color: #1e3a3f;
+  }
+  [data-theme="dark"] .acad-kicker { background: rgba(139,234,0,.12); border-color: rgba(139,234,0,.35); color: #b9f26a !important; }
+  [data-theme="dark"] .acad-lead,
+  [data-theme="dark"] .sg-p,
+  [data-theme="dark"] .sg-box p,
+  [data-theme="dark"] .sg-box li { color: #b7cbc2 !important; }
+  [data-theme="dark"] .acad-meta span { background: #162c2e; border-color: #29484b; color: #cfe3d8; }
+  [data-theme="dark"] .acad-meta span.cy { background: rgba(0,200,245,.12); border-color: rgba(56,214,255,.35); color: #7fe3ff !important; }
+  [data-theme="dark"] .acad-meta span.gr { background: rgba(139,234,0,.10); border-color: rgba(139,234,0,.32); color: #b9f26a !important; }
+  [data-theme="dark"] .sg-box { background: #112328; border-color: #234047; }
+  [data-theme="dark"] .sg-flow span { background: #142c30; border-color: #29515a; color: #d5e9df; }
+  [data-theme="dark"] .sg-table th { background: #12262b; border-bottom-color: var(--green); color: #9fb9ae !important; }
+  [data-theme="dark"] .sg-table td { border-bottom-color: #233b40; color: #c8ddd2 !important; }
+  [data-theme="dark"] .sg-table td b { color: #b9f26a !important; }
+  [data-theme="dark"] .sg-src { color: #7d9b91 !important; }
+  [data-theme="dark"] .sg-author { background: linear-gradient(120deg, #14282b, #112a33); border-color: #2a4a45; }
+  [data-theme="dark"] .sg-author span { color: #eaf7ef; }
+  [data-theme="dark"] .sg-refs { color: #9fb9ae !important; }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .reveal { opacity: 1; }
@@ -238,7 +334,8 @@
       </div>
       <div>
         <h1>Smart Greenhouse</h1>
-        <p class="sub">Monitoreo y control en tiempo real</p>
+        <p class="sub">Monitoreo y control en tiempo real · Proyecto académico Universidad de Cundinamarca</p>
+        <p class="sub" style="font-size:12.5px; opacity:.78">BIG DATA 701T · LENGUAJES AUTOMATAS 801T</p>
       </div>
     </div>
     <div class="hero-right">
@@ -253,6 +350,152 @@
       </button>
     </div>
   </header>
+
+  <section class="card reveal acad" style="--i:1" id="academico">
+    <div class="acad-top">
+      <span class="acad-kicker"><span class="dot2"></span> Proyecto académico · Universidad de Cundinamarca</span>
+      <h2>Cultivando el futuro con <span class="g">inteligencia tecnológica.</span></h2>
+      <p class="acad-lead">Smart Greenhouse es una propuesta de automatización orientada al monitoreo y control de las variables de una maqueta de invernadero. Integra un ESP32, sensores y actuadores con comunicaciones Wi-Fi y MQTT para apoyar una agricultura más eficiente y sostenible.</p>
+      <div class="acad-meta">
+        <span class="gr">BIG DATA 701T</span>
+        <span class="cy">LENGUAJES AUTOMATAS 801T</span>
+        <span>Sede Chía · Cundinamarca</span>
+        <span>2026</span>
+      </div>
+    </div>
+
+    <div class="acad-body">
+      <div class="sg-sec">
+        <span class="sg-eyebrow">Proyecto</span>
+        <h3>Identificación del proyecto</h3>
+        <p class="sg-p"><b>Smart Greenhouse</b> hace referencia a un sistema de invernadero inteligente en el que se integran sensores, actuadores, procesamiento de datos y comunicación por Internet para facilitar el monitoreo y control de variables ambientales. Se desarrolla una pequeña maqueta automatizada capaz de obtener información de las condiciones del entorno y utilizarla para apoyar procesos de control.</p>
+        <div class="sg-grid">
+          <div class="sg-box g">
+            <h4>Objetivo general</h4>
+            <p>Desarrollar un sistema de invernadero inteligente basado en un ESP32, sensores, actuadores, una interfaz HMI y tecnologías IoT, con el propósito de monitorear y controlar variables ambientales de una maqueta de invernadero.</p>
+          </div>
+          <div class="sg-box c">
+            <h4>Variables monitorizadas</h4>
+            <ul>
+              <li>Temperatura y humedad del aire (DHT11).</li>
+              <li>Humedad del suelo (sensor LM393).</li>
+              <li>Nivel de agua del tanque (HC-SR04).</li>
+              <li>Estado de ventilador y bomba.</li>
+            </ul>
+          </div>
+          <div class="sg-box n">
+            <h4>Objetivos específicos</h4>
+            <ul>
+              <li>Adquirir y procesar información de sensores con el ESP32.</li>
+              <li>Comunicar el sistema por Wi-Fi y MQTT.</li>
+              <li>Desarrollar una interfaz HTML de monitoreo y control.</li>
+              <li>Implementar ventilación y riego por goteo.</li>
+              <li>Construir e integrar la maqueta funcional.</li>
+            </ul>
+          </div>
+        </div>
+        <span class="sg-src">Fuente: Elaboración propia (documento del proyecto).</span>
+      </div>
+
+      <div class="sg-sec">
+        <span class="sg-eyebrow">Solución tecnológica</span>
+        <h3>Arquitectura general del sistema</h3>
+        <p class="sg-p">La arquitectura está planteada alrededor del ESP32 como unidad principal de procesamiento y comunicación. Los sensores proporcionan las condiciones del invernadero; el ESP32 procesa los datos y, mediante Wi-Fi y MQTT, los publica hacia el broker y la interfaz en HTML. En sentido contrario, la interfaz envía comandos de control que llegan al ESP32 y actúan sobre los relés del ventilador y la bomba.</p>
+        <div class="sg-flow">
+          <span>Sensores</span><b>→</b><span>ESP32</span><b>→</b><span>Wi-Fi / MQTT</span><b>→</b><span>Broker HiveMQ</span><b>→</b><span>Dashboard + SQL + Power BI</span>
+        </div>
+        <span class="sg-src">Fuente: Elaboración propia.</span>
+      </div>
+
+      <div class="sg-sec">
+        <span class="sg-eyebrow">Montaje</span>
+        <h3>Materiales y configuración de pines</h3>
+        <div class="sg-box" style="padding:0;overflow:hidden">
+          <table class="sg-table">
+            <thead><tr><th>Componente</th><th>GPIO ESP32</th><th>Alimentación</th></tr></thead>
+            <tbody>
+              <tr><td>DHT11 (temperatura y humedad)</td><td><b>GPIO 4</b></td><td>3.3 V desde el ESP32</td></tr>
+              <tr><td>Sensor de humedad del suelo (LM393, AO)</td><td><b>GPIO 34</b></td><td>3.3 V desde el ESP32</td></tr>
+              <tr><td>HC-SR04 · TRIG</td><td><b>GPIO 5</b></td><td>5 V desde el buck</td></tr>
+              <tr><td>HC-SR04 · ECHO (divisor 1 kΩ / 2 kΩ)</td><td><b>GPIO 18</b></td><td>5 V desde el buck</td></tr>
+              <tr><td>Relé 1 · ventilador (IN1)</td><td><b>GPIO 26</b></td><td>5 V desde el buck</td></tr>
+              <tr><td>Relé 2 · bomba (IN2)</td><td><b>GPIO 27</b></td><td>5 V desde el buck</td></tr>
+              <tr><td>Pantalla HMI (proyecto de grado)</td><td><b>GPIO 16 (RX) / 17 (TX)</b></td><td>Comunicación serial</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <span class="sg-src">Fuente: Elaboración propia. Todos los módulos comparten GND con el ESP32.</span>
+      </div>
+
+      <div class="sg-sec">
+        <span class="sg-eyebrow">Comunicación y control</span>
+        <h3>Wi-Fi, MQTT, JSON y etapa de potencia</h3>
+        <div class="sg-grid">
+          <div class="sg-box c">
+            <h4>Wi-Fi + MQTT + JSON</h4>
+            <p>El ESP32 usa Wi-Fi para conectarse al broker MQTT. Los mensajes se organizan en JSON con temperatura, humedad del aire, humedad del suelo y nivel de agua. El modelo de publicación y suscripción separa el sistema físico de la interfaz de monitoreo.</p>
+          </div>
+          <div class="sg-box g">
+            <h4>Ventilación y riego</h4>
+            <p>La temperatura del DHT11 define la activación del ventilador (relé 1, GPIO 26). La humedad del suelo por debajo del umbral activa la bomba de riego por goteo (relé 2, GPIO 27), con seguridad de tanque bajo.</p>
+          </div>
+          <div class="sg-box n">
+            <h4>Etapa de potencia (12 V)</h4>
+            <p>El ventilador y la bomba funcionan a 12 V y se controlan mediante un módulo de relés de 2 canales. El ESP32 solo envía la señal: la corriente de las cargas circula por la fuente de 12 V, separada de la lógica. Se usa un convertidor buck de 12 V a 5 V y GND común.</p>
+          </div>
+        </div>
+        <span class="sg-src">Fuente: Elaboración propia.</span>
+      </div>
+
+      <div class="sg-sec">
+        <span class="sg-eyebrow">Evidencias</span>
+        <h3>Pruebas, resultados y aprendizajes</h3>
+        <div class="sg-grid">
+          <div class="sg-box g">
+            <h4>Pruebas realizadas</h4>
+            <ul>
+              <li>Lectura de DHT11 y del sensor de humedad del suelo.</li>
+              <li>Montaje de sensores en protoboard y comunicación serial.</li>
+              <li>Conexión Wi-Fi, configuración MQTT y publicación/recepción.</li>
+              <li>Estructura de datos JSON y desarrollo inicial de la interfaz.</li>
+              <li>Esquema de conexión de la etapa de potencia.</li>
+            </ul>
+          </div>
+          <div class="sg-box c">
+            <h4>Etapa final y XPIN</h4>
+            <p>Se construyó la maqueta física y se realizaron pruebas generales de comunicación e integración. El trabajo se socializó en el evento XPIN de la Universidad de Cundinamarca, mostrando la maqueta y la integración del ESP32, los sensores, Wi-Fi, MQTT y el dashboard de supervisión.</p>
+          </div>
+          <div class="sg-box n">
+            <h4>Aprendizajes y conclusiones</h4>
+            <p>Se aplicaron conocimientos de programación de microcontroladores, sensores, redes, MQTT y automatización. El ESP32 es el elemento central de integración entre el hardware y las plataformas de comunicación; se aprendió a adaptar niveles de tensión, separar lógica y potencia con relés e integrar de forma progresiva, probando cada componente antes de conectarlo.</p>
+          </div>
+        </div>
+        <span class="sg-src">Fuente: Elaboración propia.</span>
+      </div>
+
+      <div class="sg-sec">
+        <span class="sg-eyebrow">Créditos</span>
+        <h3>Autores</h3>
+        <div class="sg-authors">
+          <div class="sg-author"><i>JD</i><span>Juan David Orduña</span></div>
+          <div class="sg-author"><i>EN</i><span>Edison Nicolas Agudelo</span></div>
+          <div class="sg-author"><i>AT</i><span>Angie Tatiana Velásquez</span></div>
+        </div>
+      </div>
+
+      <div class="sg-sec">
+        <span class="sg-eyebrow">Fuentes documentales</span>
+        <h3>Referencias</h3>
+        <ul class="sg-refs">
+          <li>Adafruit Industries. DHT11, DHT22 and AM2302 sensors.</li>
+          <li>Espressif Systems. Arduino ESP32 documentation.</li>
+          <li>MQTT.org. MQTT: The standard for IoT messaging.</li>
+          <li>OASIS (2019). MQTT Version 5.0.</li>
+        </ul>
+        <span class="sg-src">Fuente: Elaboración propia.</span>
+      </div>
+    </div>
+  </section>
 
   <div class="banner" id="banner"></div>
 
@@ -436,6 +679,8 @@
       <p class="hint2" id="pbiMsg">Pega la URL "Insertar" (Archivo → Insertar → Sitio web o portal) de Power BI Service.</p>
     </div>
   </section>
+
+
 </div>
 <div id="toast"></div>
 
